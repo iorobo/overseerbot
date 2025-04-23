@@ -1,5 +1,8 @@
 name: Build and Release OverseerBot
 
+permissions:
+  contents: write
+
 on:
   push:
     tags:
