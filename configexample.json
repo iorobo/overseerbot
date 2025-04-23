@@ -1,0 +1,8 @@
+{
+    "palworld": {
+      "host": "http://palworldserver.example",
+      "username": "admin",
+      "password": "password"
+    }
+  }
+  
