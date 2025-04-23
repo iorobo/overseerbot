@@ -1,6 +1,6 @@
 module OverseerRobo
 
-go 1.24.1
+go 1.24
 
 require (
 	go.mau.fi/whatsmeow v0.0.0-20250417131650-164ddf482526
