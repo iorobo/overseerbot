@@ -1,0 +1,33 @@
+name: Build and Release OverseerBot
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    name: Build and release for Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📅 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🧰 Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
+
+      - name: 🔨 Build binary for Linux (amd64)
+        run: |
+          GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o overseer-bot main.go
+
+      - name: 📆 Upload release to GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            overseer-bot
+            config.template.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

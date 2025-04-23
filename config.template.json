@@ -1,0 +1,7 @@
+{
+  "palworld": {
+    "host": "@{Palworld.Host}",
+    "username": "@{Palworld.Username}",
+    "password": "@{Palworld.Password}"
+  }
+}
